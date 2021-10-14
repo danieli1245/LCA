@@ -33,6 +33,25 @@ public class LCATest {
         assertEquals("LCA of 5 and 100 is null", -1, tree.findLCA(tree.root,5, 100));
     }
 
+    @Test
+    public void LLLCATest() {
+        LCA tree = new LCA();
+
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        tree. root.left.left.right = new Node(6);
+        tree.root.left.left.left = new Node(7);
+        tree.root.left.right.right = new Node(8);
+        assertEquals("LCA of 8 and 1 is ",1, tree.findLCA(tree.root,8,1));
+        assertEquals("LCA of 7 and 3 is ",1, tree.findLCA(tree.root,7,3));
+        assertEquals("LCA of 0 and 1 is ",-1, tree.findLCA(tree.root,0,1));
+
+
+    }
+
 
 
 }
