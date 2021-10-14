@@ -8,14 +8,11 @@ public class LCA {
     public List<Integer> path2 = new ArrayList<>();
 
 
-    int findLCA(int n1, int n2) {
+    int findLCA(Node root, int n1, int n2) {
 
         path1.clear();
         path2.clear();
-        return findLCAInt(root, n1, n2);
-    }
 
-    private int findLCAInt(Node root, int n1, int n2) {
         if (!findPath(root, n1, path1) || !findPath(root, n2, path2)) return -1;
 
         int i;
